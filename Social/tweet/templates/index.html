@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        {% comment %} body{
-            backgrount-color:#000;
-            color: #fff;
-        } {% endcomment %}
-    </style>
-</head>
-<body>
-    testing template
-</body>
-</html>
+{% extends "layout.html" %}
+
+{% block title %}
+tweet
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center text-white m-4">
+    This is page for the tweet
+</h1>
+
+{% endblock %}
