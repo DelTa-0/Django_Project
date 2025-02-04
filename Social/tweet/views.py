@@ -67,7 +67,8 @@ def register(request):
 def search_view(request):
     if request.method=='POST':
         query=request.POST['query']
-        return render(request,"search_results.html",{'query':query})
+        tweets=Tweet.objects.filter(text__contains=query)
+        return render(request,"search_results.html",{'query':query,'tweets':tweets})
     else:
         return render(request,"search_results.html",{})
 

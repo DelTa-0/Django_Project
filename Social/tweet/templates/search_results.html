@@ -9,20 +9,14 @@
 {% block content %}
 {%if query%}
 <h2>you searched for {{query}}</h2>
+<br>
+{%for tweet in tweets%}
+<a href="">{{tweet}}</a>
+{%endfor%}
 {%else%}
 <h2>search to continue</h2>
 
 {%endif%}
-<form action="" method="GET">
-    {{form.as_p}}
-    <button type="submit">S</button>
-</form>
-<h2>Results</h2>
-<ul>
-    {%for tweet in results %}
-    <li>{{tweet.user}}-{{tweet.text}}</li>
-    {%empty%}
-    <li>no restults found</li>
-    {%endfor%}
-</ul>
+
+    
 {% endblock %}
