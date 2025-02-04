@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+<h1>search results</h1>
+
+{% endblock %}
+
+{% block content %}
+{%if query%}
+<h2>you searched for {{query}}</h2>
+{%else%}
+<h2>search to continue</h2>
+
+{%endif%}
+<form action="" method="GET">
+    {{form.as_p}}
+    <button type="submit">S</button>
+</form>
+<h2>Results</h2>
+<ul>
+    {%for tweet in results %}
+    <li>{{tweet.user}}-{{tweet.text}}</li>
+    {%empty%}
+    <li>no restults found</li>
+    {%endfor%}
+</ul>
+{% endblock %}

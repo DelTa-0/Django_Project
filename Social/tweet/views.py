@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Tweet
-from .forms import TweetForm,UserRegistrationForm
+from .forms import TweetForm,UserRegistrationForm,SearchForm
 from django.shortcuts import get_object_or_404,redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
@@ -63,3 +63,15 @@ def register(request):
     else:
         form=UserRegistrationForm()
     return render(request,'registration/register.html',{'form':form})
+
+def search_view(request):
+    if request.method=='POST':
+        query=request.POST['query']
+        return render(request,"search_results.html",{'query':query})
+    else:
+        return render(request,"search_results.html",{})
+
+    
+
+    
+
